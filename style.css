@@ -1,204 +1,132 @@
-/* =========================
-   RESET & BASE
-========================= */
-*,
-*::before,
-*::after{
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, system-ui, sans-serif;
 }
 
-html, body{
-  width: 100%;
-  height: 100%;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #070b14;
-  color: #ffffff;
-  scroll-behavior: smooth;
+body {
+  background: #05080f;
+  color: #e6f0ff;
+  overflow-x: hidden;
 }
 
-img{
-  max-width: 100%;
-  display: block;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-.hero{
+/* ================= HERO ================= */
+.hero {
   position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-
+  height: 100vh;
+  background: url("assets/image/hero.jpeg") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-
-  background:
-    radial-gradient(1200px 600px at 50% 40%, rgba(80,120,255,0.15), transparent 70%),
-    linear-gradient(180deg, #070b14 0%, #0b1222 100%);
 }
 
-/* Background image (parallax feel) */
-.hero::before{
-  content: "";
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background-image: url("assets/image/hero.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  transform: scale(1.08);
-  filter: brightness(0.7) contrast(1.05);
-  z-index: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.85)
+  );
 }
 
-/* Overlay gradient */
-.hero::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(7,11,20,0.65) 0%,
-      rgba(7,11,20,0.85) 65%,
-      rgba(7,11,20,1) 100%
-    );
-  z-index: 1;
-}
-
-/* =========================
-   HERO CONTENT
-========================= */
-.hero-content{
+.hero-content {
   position: relative;
   z-index: 2;
-  max-width: 920px;
-  padding: 0 20px;
+  text-align: center;
+  max-width: 720px;
+  padding: 20px;
 }
 
-/* Logo above title */
-.hero-logo{
-  width: 120px;
-  height: auto;
-  margin: 0 auto 20px auto;
-  filter: drop-shadow(0 0 30px rgba(120,180,255,0.35));
-}
-
-/* =========================
-   BRAND TITLE
-========================= */
-.brand{
+.hero-title {
+  font-size: clamp(48px, 7vw, 84px);
   font-weight: 800;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  font-size: clamp(46px, 7vw, 92px);
-
-  background: linear-gradient(
-    90deg,
-    #8fe7ff 0%,
-    #6aa8ff 40%,
-    #7b6dff 75%,
-    #a66bff 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  text-shadow:
-    0 0 18px rgba(120,190,255,0.25),
-    0 0 50px rgba(110,120,255,0.15);
-
-  margin-bottom: 14px;
+  letter-spacing: 2px;
 }
 
-/* Subtitle */
-.hero-sub{
-  font-size: clamp(14px, 1.8vw, 18px);
+.hero-sub {
+  margin-top: 18px;
+  font-size: 18px;
   opacity: 0.85;
-  margin-bottom: 28px;
 }
 
-/* =========================
-   HERO BUTTONS
-========================= */
-.hero-actions{
+.hero-buttons {
+  margin-top: 40px;
   display: flex;
+  gap: 18px;
   justify-content: center;
-  gap: 14px;
   flex-wrap: wrap;
 }
 
-.btn{
-  padding: 12px 26px;
+.hero-buttons a {
+  padding: 14px 28px;
   border-radius: 999px;
-  font-weight: 600;
-  font-size: 14px;
   text-decoration: none;
-  color: #0b1222;
-
-  background: linear-gradient(180deg, #8fe7ff, #6aa8ff);
-  box-shadow:
-    0 10px 30px rgba(90,150,255,0.35),
-    inset 0 -1px 0 rgba(255,255,255,0.25);
-
-  transition: all 0.25s ease;
+  color: #fff;
+  background: linear-gradient(135deg, #4da3ff, #6fdcff);
+  font-weight: 600;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.btn:hover{
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 40px rgba(120,180,255,0.45);
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(90,160,255,0.4);
 }
 
-/* =========================
-   SECTION BELOW HERO
-========================= */
-.section{
-  padding: 120px 20px;
-  background: #070b14;
+/* ================= SECTION ================= */
+.section {
+  padding: 140px 20px;
+  background: #05080f;
 }
 
-.section-inner{
-  max-width: 1100px;
+.section-inner {
+  max-width: 760px;
   margin: 0 auto;
 }
 
-/* Section title */
-.section h2{
-  font-size: clamp(28px, 4vw, 42px);
-  margin-bottom: 24px;
-  text-align: center;
+.section h2 {
+  font-size: 38px;
+  margin-bottom: 50px;
 }
 
-/* Section text */
-.section p{
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.85;
-  text-align: center;
+/* ================= TEXT ================= */
+.section p {
+  margin-bottom: 28px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: rgba(230,240,255,0.9);
 }
 
-/* =========================
-   MOBILE TWEAKS
-========================= */
-@media (max-width: 768px){
-  .hero-logo{
-    width: 90px;
+/* ================= QUOTE ================= */
+.quote {
+  margin: 80px 0;
+  padding-left: 28px;
+  border-left: 2px solid rgba(120,200,255,0.5);
+  font-size: 26px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+/* ================= FADE ================= */
+.fade {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 600px) {
+  .section {
+    padding: 100px 18px;
   }
 
-  .hero::before{
-    background-position: center top;
-  }
-
-  .section{
-    padding: 90px 16px;
+  .quote {
+    font-size: 20px;
   }
 }
