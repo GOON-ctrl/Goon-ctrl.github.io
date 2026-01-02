@@ -4,70 +4,65 @@
   <meta charset="UTF-8" />
   <title>$GOON</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- ================= HERO ================= -->
+  <!-- ================= HERO (SATU DUNIA) ================= -->
   <section class="hero">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-      <img src="assets/image/logo.png" alt="GOON Logo" class="hero-logo" />
+      <h1 class="title">$GOON</h1>
+      <p class="subtitle">Community-driven Solana meme experiment</p>
 
-      <h1 class="hero-title">$GOON</h1>
-      <p class="hero-subtitle">
-        Community-driven Solana meme experiment
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#" class="btn primary">Twitter</a>
-        <a href="#" class="btn secondary">Telegram</a>
+      <div class="buttons">
+        <a href="#" class="btn">Twitter</a>
+        <a href="#" class="btn">Telegram</a>
       </div>
     </div>
   </section>
 
-  <!-- ================= SECTION 1 ================= -->
-  <section class="slide">
-    <h2>What is $GOON?</h2>
-    <p>
-      $GOON is a fair-launch Solana meme experiment.
-      No VCs. No insiders. No roadmap promises.
-    </p>
+  <!-- ================= WHAT IS GOON ================= -->
+  <section class="section dark">
+    <div class="container">
+      <h2>What is $GOON?</h2>
+      <p>
+        $GOON is not just a token.  
+        It’s an experiment, a movement, and a collective direction powered by community.
+      </p>
+    </div>
   </section>
 
   <!-- ================= SECTION 2 ================= -->
-  <section class="slide">
-    <h2>Token Information</h2>
-    <ul>
-      <li>Chain: Solana</li>
-      <li>Total Supply: 1,000,000,000</li>
-      <li>Launch Type: Fair Launch</li>
-      <li>Presale: None</li>
-    </ul>
+  <section class="section">
+    <div class="container">
+      <h2>Why $GOON?</h2>
+      <p>
+        No fake hype. No empty promises.  
+        Just momentum, direction, and community belief.
+      </p>
+    </div>
   </section>
 
   <!-- ================= SECTION 3 ================= -->
-  <section class="slide">
-    <h2>Token Allocation</h2>
-    <ul>
-      <li>85% — Liquidity Pool</li>
-      <li>10% — Community</li>
-      <li>5% — Development</li>
-    </ul>
+  <section class="section dark">
+    <div class="container">
+      <h2>Direction</h2>
+      <p>
+        The future is decided by those who move first.
+      </p>
+    </div>
   </section>
 
-  <!-- ================= FOOTER ================= -->
-  <footer>
-    <p>
-      $GOON is a meme experiment. Not financial advice.
-      DYOR.
-    </p>
-  </footer>
+  <!-- ================= PARALLAX SCRIPT ================= -->
+  <script>
+    const hero = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      hero.style.backgroundPosition = center ${window.scrollY * 0.35}px;
+    });
+  </script>
 
 </body>
 </html>
