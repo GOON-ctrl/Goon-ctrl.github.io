@@ -2,67 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>$GOON</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <title>GOON</title>
 
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font (optional but recommended) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
 <body>
 
-  <!-- ================= HERO (SATU DUNIA) ================= -->
+  <!-- =========================
+       HERO SECTION
+  ========================== -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-
     <div class="hero-content">
+
+      <!-- Logo -->
+      <img 
+        src="assets/image/logo.png" 
+        alt="GOON Logo" 
+        class="hero-logo"
+      />
+
+      <!-- Brand Title -->
       <h1 class="brand">GOON</h1>
-      <p class="subtitle">Community-driven Solana meme experiment</p>
 
-      <div class="buttons">
-        <a href="#" class="btn">Twitter</a>
-        <a href="#" class="btn">Telegram</a>
+      <!-- Subtitle -->
+      <p class="hero-sub">
+        Community-driven Solana meme experiment
+      </p>
+
+      <!-- Actions -->
+      <div class="hero-actions">
+        <a 
+          href="https://twitter.com/USERNAME_LO" 
+          target="_blank" 
+          class="btn"
+        >
+          Twitter
+        </a>
+
+        <a 
+          href="https://t.me/USERNAME_LO" 
+          target="_blank" 
+          class="btn"
+        >
+          Telegram
+        </a>
       </div>
+
     </div>
   </section>
 
-  <!-- ================= WHAT IS GOON ================= -->
-  <section class="section dark">
-    <div class="container">
-      <h2>What is $GOON?</h2>
-      <p>
-        $GOON is not just a token.  
-        It’s an experiment, a movement, and a collective direction powered by community.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= SECTION 2 ================= -->
+  <!-- =========================
+       WHAT IS GOON
+  ========================== -->
   <section class="section">
-    <div class="container">
-      <h2>Why $GOON?</h2>
+    <div class="section-inner">
+      <h2>What is GOON?</h2>
       <p>
-        No fake hype. No empty promises.  
-        Just momentum, direction, and community belief.
+        GOON is a community-driven experiment built on Solana.
+        No promises. No insiders. No hype manipulation.
+        Just direction, curiosity, and collective momentum.
       </p>
     </div>
   </section>
-
-  <!-- ================= SECTION 3 ================= -->
-  <section class="section dark">
-    <div class="container">
-      <h2>Direction</h2>
-      <p>
-        The future is decided by those who move first.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= PARALLAX SCRIPT ================= -->
-  <script>
-    const hero = document.querySelector('.hero');
-    window.addEventListener('scroll', () => {
-      hero.style.backgroundPosition = center ${window.scrollY * 0.35}px;
-    });
-  </script>
 
 </body>
 </html>
