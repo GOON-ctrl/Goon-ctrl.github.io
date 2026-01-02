@@ -1,4 +1,17 @@
-/* =========================
+[14:41, 02/01/2026] Exzkiel: <section class="hero section">
+
+  <img src="assets/image/logo.png" alt="GOON Logo" class="hero-logo">
+
+  <h1><span class="grad">$GOON</span></h1>
+  <p>Community-driven Solana meme experiment</p>
+
+  <div class="links">
+    <a href="https://x.com/goon_meme?s=21" target="_blank">Twitter</a>
+    <a href="https://t.me/GOON_community" target="_blank">Telegram</a>
+  </div>
+
+</section>
+[14:43, 02/01/2026] Exzkiel: /* =========================
    RESET & BASE
 ========================= */
 * {
@@ -38,6 +51,16 @@ body {
   min-height: 90vh;
   padding: 120px 20px 100px;
   text-align: center;
+  flex-direction: column;
+}
+
+/* HERO LOGO */
+.hero-logo {
+  width: 180px;
+  max-width: 60%;
+  margin: 0 auto 26px;
+  display: block;
+  filter: drop-shadow(0 0 30px rgba(99,102,241,.6));
 }
 
 .hero h1 {
@@ -146,6 +169,10 @@ body {
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 42px;
+  }
+
+  .hero-logo {
+    width: 140px;
   }
 
   .card {
