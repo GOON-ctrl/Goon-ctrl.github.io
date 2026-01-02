@@ -2,73 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GOON</title>
-
-  <!-- Main CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Font (optional but recommended) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- =========================
-       HERO SECTION
-  ========================== -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
-
-      <!-- Logo -->
-      <img 
-        src="assets/image/logo.png" 
-        alt="GOON Logo" 
-        class="hero-logo"
-      />
-
-      <!-- Brand Title -->
-      <h1 class="brand">GOON</h1>
-
-      <!-- Subtitle -->
+      <h1 class="hero-title">GOON</h1>
       <p class="hero-sub">
         Community-driven Solana meme experiment
       </p>
 
-      <!-- Actions -->
-      <div class="hero-actions">
-        <a 
-          href="https://x.com/goon_meme?s=21" 
-          target="_blank" 
-          class="btn"
-        >
-          Twitter
-        </a>
-
-        <a 
-          href="https://t.me/GOON_Community" 
-          target="_blank" 
-          class="btn"
-        >
-          Telegram
-        </a>
+      <div class="hero-buttons">
+        <a href="https://x.com/goon_meme?s=21" target="_blank">Twitter</a>
+        <a href="https://t.me/GOON_Community" target="_blank">Telegram</a>
       </div>
-
     </div>
   </section>
 
-  <!-- =========================
-       WHAT IS GOON
-  ========================== -->
+  <!-- ================= WHAT IS GOON ================= -->
   <section class="section">
     <div class="section-inner">
-      <h2>What is GOON?</h2>
-      <p>
-        GOON is a community-driven experiment built on Solana.
-        No promises. No insiders. No hype manipulation.
-        Just direction, curiosity, and collective momentum.
+      <h2 class="fade">What is GOON?</h2>
+
+      <p class="fade">
+        GOON didn’t start with a grand plan.
+        It began in the quiet space between uncertainty and curiosity —
+        where nothing felt certain, but stopping felt worse than moving forward.
+      </p>
+
+      <p class="fade">
+        The name GOON comes from the idea of <em>“go on”</em>.
+        To continue when direction is blurred.
+        In a space obsessed with destinations, targets, and moons,
+        GOON chose motion over promises.
+      </p>
+
+      <blockquote class="quote fade">
+        Not a promise of arrival —  
+        just the decision to keep moving.
+      </blockquote>
+
+      <p class="fade">
+        GOON is not built on guarantees.
+        There is no roadmap carved in stone.
+        No illusion of control.
+        Only momentum, attention,
+        and the shared instinct to see what happens next.
+      </p>
+
+      <p class="fade">
+        This is an experiment —
+        not just in technology,
+        but in restraint.
+        In choosing not to shout.
+        In choosing not to explain everything.
+      </p>
+
+      <p class="fade">
+        GOON exists for those who understand
+        that not everything valuable announces itself.
+        Some things don’t rush toward the spotlight.
+        They simply continue —
+        quietly, steadily —
+        until they are noticed.
       </p>
     </div>
   </section>
+
+  <!-- ================= FADE IN SCRIPT ================= -->
+  <script>
+    const faders = document.querySelectorAll('.fade');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
