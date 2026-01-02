@@ -1,112 +1,204 @@
-* {
+/* =========================
+   RESET & BASE
+========================= */
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Inter, Arial, sans-serif;
 }
 
-body {
-  background: #0b1220;
+html, body{
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #070b14;
   color: #ffffff;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* ================= HERO ================= */
-.hero {
-  height: 100vh;
+img{
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    radial-gradient(1200px 600px at 50% 40%, rgba(80,120,255,0.15), transparent 70%),
+    linear-gradient(180deg, #070b14 0%, #0b1222 100%);
+}
+
+/* Background image (parallax feel) */
+.hero::before{
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url("assets/image/hero.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  transform: scale(1.08);
+  filter: brightness(0.7) contrast(1.05);
+  z-index: 0;
 }
 
-.hero-overlay {
+/* Overlay gradient */
+.hero::after{
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.25), #05080f);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7,11,20,0.65) 0%,
+      rgba(7,11,20,0.85) 65%,
+      rgba(7,11,20,1) 100%
+    );
+  z-index: 1;
 }
 
-.hero-content {
+/* =========================
+   HERO CONTENT
+========================= */
+.hero-content{
   position: relative;
   z-index: 2;
-  text-align: center;
+  max-width: 920px;
+  padding: 0 20px;
 }
 
-.title {
-  font-size: 64px;
+/* Logo above title */
+.hero-logo{
+  width: 120px;
+  height: auto;
+  margin: 0 auto 20px auto;
+  filter: drop-shadow(0 0 30px rgba(120,180,255,0.35));
+}
+
+/* =========================
+   BRAND TITLE
+========================= */
+.brand{
   font-weight: 800;
-  background: linear-gradient(90deg, #7dd3fc, #60a5fa);
+  letter-spacing: 0.04em;
+  line-height: 1;
+  font-size: clamp(46px, 7vw, 92px);
+
+  background: linear-gradient(
+    90deg,
+    #8fe7ff 0%,
+    #6aa8ff 40%,
+    #7b6dff 75%,
+    #a66bff 100%
+  );
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow:
+    0 0 18px rgba(120,190,255,0.25),
+    0 0 50px rgba(110,120,255,0.15);
+
+  margin-bottom: 14px;
 }
 
-.subtitle {
-  margin-top: 12px;
-  font-size: 16px;
+/* Subtitle */
+.hero-sub{
+  font-size: clamp(14px, 1.8vw, 18px);
   opacity: 0.85;
+  margin-bottom: 28px;
 }
 
-.buttons {
-  margin-top: 28px;
+/* =========================
+   HERO BUTTONS
+========================= */
+.hero-actions{
   display: flex;
-  gap: 16px;
   justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.btn {
+.btn{
   padding: 12px 26px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #38bdf8, #3b82f6);
-  color: #001018;
   font-weight: 600;
+  font-size: 14px;
   text-decoration: none;
-  transition: transform .2s ease, box-shadow .2s ease;
+  color: #0b1222;
+
+  background: linear-gradient(180deg, #8fe7ff, #6aa8ff);
+  box-shadow:
+    0 10px 30px rgba(90,150,255,0.35),
+    inset 0 -1px 0 rgba(255,255,255,0.25);
+
+  transition: all 0.25s ease;
 }
 
-.btn:hover {
+.btn:hover{
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(56,189,248,0.4);
+  box-shadow:
+    0 14px 40px rgba(120,180,255,0.45);
 }
 
-/* ================= SECTIONS ================= */
-.section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 80px 20px;
+/* =========================
+   SECTION BELOW HERO
+========================= */
+.section{
+  padding: 120px 20px;
+  background: #070b14;
 }
 
-.section.dark {
-  background: #05080f;
+.section-inner{
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
+/* Section title */
+.section h2{
+  font-size: clamp(28px, 4vw, 42px);
+  margin-bottom: 24px;
   text-align: center;
 }
 
-.container h2 {
-  font-size: 36px;
-  margin-bottom: 20px;
-}
-
-.container p {
-  font-size: 18px;
+/* Section text */
+.section p{
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 16px;
   line-height: 1.7;
-  opacity: 0.9;
+  opacity: 0.85;
+  text-align: center;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .title {
-    font-size: 44px;
+/* =========================
+   MOBILE TWEAKS
+========================= */
+@media (max-width: 768px){
+  .hero-logo{
+    width: 90px;
   }
-  .section {
-    padding: 60px 16px;
+
+  .hero::before{
+    background-position: center top;
+  }
+
+  .section{
+    padding: 90px 16px;
   }
 }
