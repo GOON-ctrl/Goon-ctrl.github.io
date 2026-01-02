@@ -2,95 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>GOON</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOON</title>
+
+  <!-- CSS TETAP TERPISAH -->
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="assets/image/logo.png" class="hero-logo" alt="GOON Logo" />
 
-    <div class="hero-content">
-      <h1 class="hero-title">GOON</h1>
-      <p class="hero-sub">
-        Community-driven Solana meme experiment
-      </p>
+    <h1 class="hero-title gradient-text">GOON</h1>
 
-      <div class="hero-buttons">
-        <a href="https://x.com/goon_meme?s=21" target="_blank">Twitter</a>
-        <a href="https://t.me/GOON_Community" target="_blank">Telegram</a>
-      </div>
+    <p class="hero-subtitle">
+      Community-driven Solana meme experiment
+    </p>
+
+    <div class="hero-actions">
+      <a href="https://x.com/goon_meme?s=21" target="_blank">Twitter</a>
+      <a href="https://t.me/GOON_Community" target="_blank">Telegram</a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ================= WHAT IS GOON ================= -->
-  <section class="section">
-    <div class="section-inner">
-      <h2 class="fade">What is GOON?</h2>
+<!-- ================= WHAT IS GOON ================= -->
+<section class="dark-section">
+  <div class="section-inner">
+    <h2 class="fade">What is GOON?</h2>
 
-      <p class="fade">
-        GOON didn’t start with a grand plan.
-        It began in the quiet space between uncertainty and curiosity —
-        where nothing felt certain, but stopping felt worse than moving forward.
-      </p>
+    <p class="fade">
+      GOON didn’t start with a grand plan.
+      It started in the quiet space between uncertainty and curiosity —
+      where nothing felt clear, but stopping felt wrong.
+    </p>
 
-      <p class="fade">
-        The name GOON comes from the idea of <em>“go on”</em>.
-        To continue when direction is blurred.
-        In a space obsessed with destinations, targets, and moons,
-        GOON chose motion over promises.
-      </p>
+    <p class="fade">
+      The name GOON comes from the idea of “going on”.
+      Continuing forward when direction is blurred.
+      In a space obsessed with speed and instant arrival,
+      GOON chose persistence without promises.
+    </p>
 
-      <blockquote class="quote fade">
-        Not a promise of arrival —  
-        just the decision to keep moving.
-      </blockquote>
+    <p class="fade">
+      GOON is not built on guarantees.
+      There is no fixed roadmap.
+      No illusion of control.
+      Only momentum, shared attention,
+      and the willingness to see what happens next.
+    </p>
 
-      <p class="fade">
-        GOON is not built on guarantees.
-        There is no roadmap carved in stone.
-        No illusion of control.
-        Only momentum, attention,
-        and the shared instinct to see what happens next.
-      </p>
+    <blockquote class="quote fade">
+      This is not a destination.<br />
+      This is an experiment.
+    </blockquote>
+  </div>
+</section>
 
-      <p class="fade">
-        This is an experiment —
-        not just in technology,
-        but in restraint.
-        In choosing not to shout.
-        In choosing not to explain everything.
-      </p>
+<!-- ================= JS (NYATU DI SINI) ================= -->
+<script>
+  const elements = document.querySelectorAll(".fade");
 
-      <p class="fade">
-        GOON exists for those who understand
-        that not everything valuable announces itself.
-        Some things don’t rush toward the spotlight.
-        They simply continue —
-        quietly, steadily —
-        until they are noticed.
-      </p>
-    </div>
-  </section>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-  <!-- ================= FADE IN SCRIPT ================= -->
-  <script>
-    const faders = document.querySelectorAll('.fade');
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    faders.forEach(el => observer.observe(el));
-  </script>
+  elements.forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
